@@ -29,4 +29,3 @@ The two Q4 net achieved amounts and each month's table figures start masked. Cli
 For Vercel, create a GitHub repository from this `sales-dashboard` folder and import it with the repository root as the project root. `vercel.json` selects the **Other** framework and serves the `web` directory without a build command. Each push to the connected production branch can deploy a new version. Other static hosts can serve the same `web` folder.
 
 The shared Google Sheet is public to viewers, including all data in its shared tabs. The dashboard interface shows only Ankit and Tripti. Keep editing permission limited to the people who maintain the sheet. If the sheet ID, tab ID, row positions, or columns change, update `web/data.mjs`.
-

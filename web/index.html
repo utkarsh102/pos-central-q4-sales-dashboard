@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#082b1d" />
+    <meta name="description" content="POS Central Q4 2026 sales performance dashboard for Ankit Arora and Tripti Mandal." />
+    <title>Q4 Sales Arena · POS Central</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <div class="topline" aria-hidden="true"></div>
+    <header class="site-header shell">
+      <a class="brand" href="/" aria-label="POS Central Q4 dashboard home">
+        <img src="/assets/pos-central-logo.png" alt="POS Central" />
+      </a>
+      <div class="header-right">
+        <span class="header-label">SALES PERFORMANCE / 2026</span>
+        <span id="connectionPill" class="connection-pill loading"><span class="status-dot"></span><span>Connecting</span></span>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="eyebrow light"><span class="eyebrow-line"></span> THE FINAL QUARTER</div>
+          <div class="hero-heading-row">
+            <div>
+              <h1 id="heroTitle">Q4 Sales <em>Arena.</em></h1>
+              <p class="hero-subtitle">Two salespeople. Three months. One clear view of every target.</p>
+            </div>
+            <div class="quarter-badge" aria-label="Quarter 4, 2026"><span>Q4</span><small>2026</small></div>
+          </div>
+          <div class="hero-stats" aria-label="Selected region Q4 totals">
+            <div class="hero-stat"><span id="teamTargetLabel" class="hero-stat-label">ANZ TOTAL Q4 TARGET</span><strong id="teamTarget">—</strong></div>
+            <div class="hero-stat"><span class="hero-stat-label">NET ACHIEVED</span><strong id="teamActual">—</strong></div>
+            <div class="hero-stat"><span class="hero-stat-label">TARGET COMPLETE</span><strong id="teamPercent">—</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="errorNotice" class="notice" role="alert" hidden></div>
+
+      <section class="section controls-section" aria-label="Dashboard controls">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> EXPLORE THE NUMBERS</div>
+          <h2 class="section-title">The quarter, <span>at a glance.</span></h2>
+        </div>
+        <div class="region-control" role="group" aria-label="Choose reporting region">
+          <button class="region-button active" type="button" data-region="combined" aria-pressed="true">ANZ total</button>
+          <button class="region-button" type="button" data-region="australia" aria-pressed="false">Australia</button>
+          <button class="region-button" type="button" data-region="newZealand" aria-pressed="false">New Zealand</button>
+        </div>
+      </section>
+
+      <section class="people-grid" aria-label="Salesperson performance">
+        <article id="ankitCard" class="person-card" data-person="ankit">
+          <div class="person-card-top">
+            <div class="person-identity"><span class="avatar avatar-ankit" aria-hidden="true">AA</span><div><span class="card-kicker">SALES PERSON 01</span><h3>Ankit Arora</h3></div></div>
+            <span id="ankitLevel" class="level-pill">—</span>
+          </div>
+          <div class="person-money"><span>NET ACHIEVED IN Q4</span><div class="person-money-value"><strong id="ankitActual" class="animated-number">••••••</strong><button class="eye-toggle card-eye" type="button" data-card-eye="ankit" aria-label="Show Ankit Arora's Q4 net achieved amount" aria-controls="ankitActual" aria-pressed="false"></button></div></div>
+          <div class="person-target-line"><span>of <strong id="ankitTarget">—</strong> target</span><strong id="ankitPercent">—</strong></div>
+          <div class="progress-track" role="progressbar" aria-label="Ankit Q4 target progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="ankitProgress" class="progress-fill"></span></div>
+          <div class="milestone-row" aria-label="Ankit progress milestones"><span data-milestone="25">25%</span><span data-milestone="50">50%</span><span data-milestone="75">75%</span><span data-milestone="100">100%</span></div>
+          <div class="person-card-footer"><span><i class="footer-icon" aria-hidden="true">↗</i> <span id="ankitRemaining">—</span></span><button class="details-link" type="button" data-select-person="ankit">View breakdown <span aria-hidden="true">↗</span></button></div>
+        </article>
+
+        <article id="triptiCard" class="person-card" data-person="tripti">
+          <div class="person-card-top">
+            <div class="person-identity"><span class="avatar avatar-tripti" aria-hidden="true">TM</span><div><span class="card-kicker">SALES PERSON 02</span><h3>Tripti Mandal</h3></div></div>
+            <span id="triptiLevel" class="level-pill">—</span>
+          </div>
+          <div class="person-money"><span>NET ACHIEVED IN Q4</span><div class="person-money-value"><strong id="triptiActual" class="animated-number">••••••</strong><button class="eye-toggle card-eye" type="button" data-card-eye="tripti" aria-label="Show Tripti Mandal's Q4 net achieved amount" aria-controls="triptiActual" aria-pressed="false"></button></div></div>
+          <div class="person-target-line"><span>of <strong id="triptiTarget">—</strong> target</span><strong id="triptiPercent">—</strong></div>
+          <div class="progress-track" role="progressbar" aria-label="Tripti Q4 target progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="triptiProgress" class="progress-fill"></span></div>
+          <div class="milestone-row" aria-label="Tripti progress milestones"><span data-milestone="25">25%</span><span data-milestone="50">50%</span><span data-milestone="75">75%</span><span data-milestone="100">100%</span></div>
+          <div class="person-card-footer"><span><i class="footer-icon" aria-hidden="true">↗</i> <span id="triptiRemaining">—</span></span><button class="details-link" type="button" data-select-person="tripti">View breakdown <span aria-hidden="true">↗</span></button></div>
+        </article>
+      </section>
+
+      <section class="section journey-section" aria-labelledby="journeyTitle">
+        <div class="section-head">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> THE ROAD TO DECEMBER</div><h2 id="journeyTitle" class="section-title">Three months. <span>One finish line.</span></h2></div>
+          <div class="section-caption">Progress reflects net actual against each person's Q4 target.</div>
+        </div>
+        <div class="journey-panel">
+          <div class="journey-header"><span>THE Q4 COURSE</span><span>100% OF TARGET <span aria-hidden="true">◆</span></span></div>
+          <div class="journey-lane"><div class="lane-name"><span class="lane-dot ankit-dot"></span>Ankit <strong id="ankitLanePercent">—</strong></div><div class="lane-track"><div class="lane-checkpoints" aria-hidden="true"><i></i><i></i><i></i></div><div id="ankitLane" class="lane-fill ankit-fill"></div><span id="ankitMarker" class="lane-marker ankit-marker" aria-hidden="true">AA</span></div></div>
+          <div class="journey-lane"><div class="lane-name"><span class="lane-dot tripti-dot"></span>Tripti <strong id="triptiLanePercent">—</strong></div><div class="lane-track"><div class="lane-checkpoints" aria-hidden="true"><i></i><i></i><i></i></div><div id="triptiLane" class="lane-fill tripti-fill"></div><span id="triptiMarker" class="lane-marker tripti-marker" aria-hidden="true">TM</span></div></div>
+          <div class="journey-scale"><span>START</span><span>25%</span><span>50%</span><span>75%</span><span>FINISH</span></div>
+        </div>
+      </section>
+
+      <section class="section chart-section" aria-labelledby="chartTitle">
+        <div class="section-head">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> MONTH-BY-MONTH</div><h2 id="chartTitle" class="section-title">The numbers <span>behind the climb.</span></h2></div>
+          <div class="chart-legend"><span><i class="legend-swatch legend-target"></i> Target</span><span><i class="legend-swatch legend-actual"></i> Net actual</span></div>
+        </div>
+        <div class="analysis-panel">
+          <div class="analysis-toolbar"><div class="person-switch" role="group" aria-label="Choose salesperson"><button type="button" class="person-switch-button active" data-person-button="ankit" aria-pressed="true">Ankit Arora</button><button type="button" class="person-switch-button" data-person-button="tripti" aria-pressed="false">Tripti Mandal</button></div><span id="chartCurrency" class="currency-pill">AUD</span></div>
+          <div id="monthChart" class="month-chart" role="img" aria-label="Monthly target and net actual chart"></div>
+          <div class="table-scroll-hint">Swipe to see payments, refunds, and net actual <span aria-hidden="true">→</span></div>
+          <div class="ledger-wrap"><table class="ledger"><thead><tr><th>MONTH</th><th>TARGET</th><th>PAYMENTS</th><th>REFUNDS</th><th>NET ACTUAL</th></tr></thead><tbody id="ledgerBody"></tbody></table></div>
+        </div>
+      </section>
+
+      <footer class="footer"><div class="footer-main"><span>POS Central <span aria-hidden="true">·</span> Q4 Sales Arena</span><span id="sourceStatus">Waiting for Google Sheet data</span></div><p>Figures reflect the linked Google Sheet. Changes to that sheet are checked automatically every 30 seconds.</p></footer>
+    </main>
+  </body>
+</html>

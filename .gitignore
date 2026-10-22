@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+.vercel/
+.env*
+node_modules/
+*.pyc
+*.xlsx
+*.xlsm
+~$*
