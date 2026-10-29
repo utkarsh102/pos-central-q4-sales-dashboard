@@ -36,9 +36,13 @@
 
       <div id="errorNotice" class="notice" role="alert" hidden></div>
 
-      <section class="comparison" aria-label="Q4 competition status">
-        <span class="comparison-label">Q4 comparison</span>
-        <strong id="leaderSummary">Loading progress…</strong>
+      <section class="comparison" aria-label="Q4 competition status" aria-live="polite">
+        <span class="comparison-icon" aria-hidden="true">🏆</span>
+        <div class="comparison-copy">
+          <span class="comparison-label">Q4 target progress · Selected region</span>
+          <strong id="leaderSummary">Loading progress…</strong>
+        </div>
+        <span id="leaderScore" class="comparison-score"></span>
       </section>
 
       <section class="people-grid" aria-label="Salesperson performance">

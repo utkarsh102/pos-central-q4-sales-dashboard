@@ -75,9 +75,17 @@ function renderComparison(ankit, tripti) {
   const ankitPercent = progress(ankit.q4Actual, ankit.q4Target);
   const triptiPercent = progress(tripti.q4Actual, tripti.q4Target);
   const difference = Math.abs(ankitPercent - triptiPercent);
-  $("leaderSummary").textContent = difference < 0.05
-    ? "Ankit and Tripti are level on target progress."
-    : `${ankitPercent > triptiPercent ? "Ankit" : "Tripti"} leads by ${new Intl.NumberFormat("en-AU", { maximumFractionDigits: 1 }).format(difference)} percentage points.`;
+  if (ankitPercent === 0 && triptiPercent === 0) {
+    $("leaderSummary").textContent = "No leader yet";
+    $("leaderScore").textContent = "Both at 0% of target";
+  } else if (difference < 0.05) {
+    $("leaderSummary").textContent = "Ankit and Tripti are tied";
+    $("leaderScore").textContent = `${formatPercent(ankitPercent)} of target each`;
+  } else {
+    const leader = ankitPercent > triptiPercent ? "Ankit" : "Tripti";
+    $("leaderSummary").textContent = `${leader} is leading`;
+    $("leaderScore").textContent = `${formatPercent(Math.max(ankitPercent, triptiPercent))} vs ${formatPercent(Math.min(ankitPercent, triptiPercent))} · ${new Intl.NumberFormat("en-AU", { maximumFractionDigits: 1 }).format(difference)} pts ahead`;
+  }
 }
 
 function updateMonthRow(row, month, currency, index) {
